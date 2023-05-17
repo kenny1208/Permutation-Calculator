@@ -1,0 +1,19 @@
+body {
+  font-family: Times;
+}
+table {
+  text-align: center;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+  border: 1px solid #dddddd;
+}
+input[type="number"] {
+  width: 60px;
+}
+
+.top {
+  background-color: darkseagreen;
+}
