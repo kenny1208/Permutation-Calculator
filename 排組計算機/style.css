@@ -17,3 +17,15 @@ input[type="number"] {
 .top {
   background-color: darkseagreen;
 }
+
+.return {
+  background-color: rgb(234, 203, 163);
+}
+
+.third {
+  background-color: rgb(251, 202, 209);
+}
+
+.forth {
+  background-color: blanchedalmond;
+}
