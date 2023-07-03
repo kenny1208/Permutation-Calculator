@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permutation-Calculator</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <table class="head">
+      <tr>
+        <td>
+          <b><u>Permutations and Combinations</u></b>
+        </td>
+      </tr>
+      <tr>
+        <td class="blue">by Kenny Chen, kenny1208@gmail.com,2023</td>
+      </tr>
+    </table>
+
+    <table class="one">
+      <tr class="top">
+        <th>Formula</th>
+        <th>
+          <label><i>n</i> = </label>
+          <input type="number" id="n" value="7" min="0" />
+          <label><i>r</i> = </label>
+          <input type="number" id="r" value="3" min="0" />
+        </th>
+        <th>
+          <button type="button" onclick="computeAlltop()">Compute All</button>
+        </th>
+        <th>Order relevant</th>
+        <th>Repetition</th>
+        <th>Memo</th>
+      </tr>
+      <tr>
+        <td>
+          <label><i>P</i>(<i>n</i>, <i>r</i>)</label>
+        </td>
+        <td>
+          <span id="resPermutation"> </span>
+        </td>
+        <td>
+          <button type="button" onclick="clickPerm()">Permutation</button>
+        </td>
+        <td>yes</td>
+        <td>no</td>
+        <td align="left">
+          # Permutations of size <i>r</i> from <i>n</i> distinct objects
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label><i>C</i>(<i>n</i>, <i>r</i>)</label>
+        </td>
+        <td>
+          <span id="resCombination"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickComb()">Combination</button>
+        </td>
+        <td>no</td>
+        <td>no</td>
+        <td align="left">
+          # Selections/Combinations of size <i>r</i> from <i>n</i> distinct
+          objects
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <i>n<sup>r</sup></i>
+          </label>
+        </td>
+        <td>
+          <span id="resArrangement"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickArra()">
+            Arrangement with repetition
+          </button>
+        </td>
+        <td>yes</td>
+        <td>yes</td>
+        <td align="left">
+          # Arrangements with repetition of size <i>r</i> from <i>n</i> distinct
+          objects
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label><i>C</i>(<i>r</i>+<i>n</i>-1, <i>r</i>)</label>
+        </td>
+        <td>
+          <span id="resSelectrofn"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickSele()">
+            Selection with repetition
+          </button>
+        </td>
+        <td>no</td>
+        <td>yes</td>
+        <td align="left">
+          # Selections with repetition of size <i>r</i> from <i>n</i> distinct
+          objects
+        </td>
+      </tr>
+    </table>
+    <!-- 第一部分結束 -->
+    <br />
+    <!-- 第二部分開始 -->
+    <table class="two">
+      <tr class="return">
+        <th colspan="6" align="left">
+          The first n triangular, harmonic, Fibonacci, Lucas, Catalan
+          numberswith respect to n;
+        </th>
+      </tr>
+      <tr class="return">
+        <th>
+          Formula
+          <!-- 公式 -->
+        </th>
+        <th>
+          <label><i>n</i> = </label>
+          <input type="number" id="nreturn" value="3" min="0" />
+        </th>
+        <th>
+          <button type="button" onclick="computeAllreturn()">
+            Compute All
+          </button>
+        </th>
+
+        <th>Memo</th>
+      </tr>
+      <tr>
+        <td>
+          <label><i>(n)(n + 1) / 2</i></label>
+        </td>
+        <td>
+          <span id="resTriangular"> </span>
+        </td>
+        <td>
+          <button type="button" onclick="clickTriangular()">triangular</button>
+        </td>
+        <td align="left">
+          # Triangular numbers are numbers that make up the sequence 1, 3, 6, 10
+        </td>
+      </tr>
+      <tr class="img">
+        <td>
+          <img
+            src="./images/NumberedEquation1.svg"
+            class="numberedequation"
+            style="max-height: 100%; max-width: 100%"
+            alt=" H_n=sum_(k=1)^n1/k "
+            width="79"
+            height="52"
+            border="0"
+          />
+        </td>
+        <td>
+          <span id="resHarmonic"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickHarmonic()">harmonic</button>
+        </td>
+
+        <td align="left">
+          # Mean in that the n-th harmonic number mean of the first n positive
+          integers.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./images/binets-formula-for-fibonacci.png"
+            class="numberedequation"
+            style="max-height: 100%; max-width: 100%"
+            alt="H_n=sum_(k=1)^n1/k "
+            width="180"
+            height="40"
+            border="0"
+          />
+        </td>
+        <td>
+          <span id="resFibonacci"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickFibonacci()">Fibonacci</button>
+        </td>
+
+        <td align="left">
+          #<img
+            src="./images/fib.png"
+            class="numberedequation"
+            style="max-height: 100%; max-width: 100%"
+            alt=" H_n=sum_(k=1)^n1/k "
+            width="160"
+            height="40"
+            border="0"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>
+            <i>
+              <em>x</em>
+              <sub>
+                <em>n</em>
+              </sub>
+              =
+              <em>x</em>
+              <sub>
+                <em>n</em>
+                -1
+              </sub>
+              +
+              <em>x</em>
+              <sub>
+                <em>n</em>
+                -2
+              </sub>
+            </i>
+          </label>
+        </td>
+        <td>
+          <span id="resLucas"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickLucas()">Lucas</button>
+        </td>
+
+        <td align="left">
+          #each term is the sum of the two previous terms, but with different
+          starting values.
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label
+            ><img
+              src="./images/catalan formula.png"
+              class="latex"
+              alt="$C_n = \sum_{k=0}^{n-1} C_k C_{n-1-k}$"
+              style="vertical-align: -20px"
+              width="151"
+              height="50"
+          /></label>
+        </td>
+        <td>
+          <span id="resCatalan"></span>
+        </td>
+        <td>
+          <button type="button" onclick="clickCatalan()">Catalan</button>
+        </td>
+
+        <td align="left">
+          #nth Catalan number is obtained by taking the factorial of 2n and
+          dividing it by the product of the factorial of (n + 1) and the
+          factorial of n.
+        </td>
+      </tr>
+    </table>
+    <!-- 第二部分結束 -->
+
+    <br />
+
+    <!-- 第三部分開始 -->
+    <table class="three">
+      <tr class="third">
+        <th colspan="6" align="left">
+          Eulerian numbers with respect to m, k for 0&lt;=k&lt;=m-1 (i.e.,
+          a_sub(m,0), a_sub(m,1), ... , a_sub(m, m-1) )
+        </th>
+      </tr>
+      <tr class="third">
+        <th>Formula</th>
+        <th>
+          <label><i>m</i> = </label>
+          <input type="number" id="mValue" value="4" min="0" />
+          <label><i>k</i> = </label>
+          <input type="number" id="kValue" value="2" min="0" />
+        </th>
+        <th>Calculate</th>
+        <th>Memo</th>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://wikimedia.org/api/rest_v1/media/math/render/svg/de3cf5f80fbf7e750a2e03ab68546a4fb16d7eea"
+            aria-hidden="true"
+            style="vertical-align: -3.005ex; width: 27.951ex; height: 6.843ex"
+            alt="{\displaystyle \sum _{n=0}^{\infty }A_{n}（t）\，{\frac {x^{n}}{n！}}={\frac {t-1}{t-\mathrm {e} ^{（t-1）\，x}}}.}"
+            _mstalt="7374705"
+            _msthash="160"
+          />
+        </td>
+        <td>
+          <span id="resEulerian"> </span>
+        </td>
+        <td>
+          <button type="button" onclick="clickEulerian()">Eulerian</button>
+        </td>
+
+        <td align="left">
+          #A(m, k) counts permutations of 1 to m with exactly k elements greater
+          than their previous element.
+        </td>
+      </tr>
+    </table>
+    <!-- 第三部分結束 -->
+
+    <br />
+
+    <!-- 弟四部分開始 -->
+    <table class="four">
+      <tr class="forth">
+        <th colspan="6" align="left">
+          Stirling number of the second kind with respect to m, n for
+          1&lt;=n&lt;=m (i.e., S_sub(m, 1), S_sub(m, 2), ... , S_sub(m, n) )
+        </th>
+      </tr>
+      <tr class="forth">
+        <th>Formula</th>
+        <th>
+          <label><i>m</i> = </label>
+          <input type="number" id="mfour" value="4" min="0" />
+          <label><i>n</i> = </label>
+          <input type="number" id="nfour" value="2" min="0" />
+        </th>
+        <th>Calculate</th>
+        <th>Memo</th>
+      </tr>
+      <tr>
+        <td>S(m,n) = S(m – 1,n – 1) + nS(m – 1,n)</td>
+        <td>
+          <span id="resStirling"> </span>
+        </td>
+        <td>
+          <button type="button" onclick="clickStirlingNumberSecondKind()">
+            Stirling number of the second kind
+          </button>
+        </td>
+
+        <td align="left">
+          #to partition a set of m elements into n non-empty subsets.
+        </td>
+      </tr>
+    </table>
+    <!-- 第四部份結束 -->
+
+    <br />
+
+    <table class="five">
+      <thead>
+        <tr class="third">
+          <th colspan="7" align="left">
+            Distribute m objects into n containers
+          </th>
+        </tr>
+        <tr>
+          <th>Distinct Object(m)</th>
+          <th>Distinct containers(n)</th>
+          <th>Some Empty Comtainers(n)</th>
+          <th>Number of Distributions</th>
+          <th class="Interpretation">Interpretation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--line1-->
+
+        <tr>
+          <td>yes</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>
+            <label
+              ><i>n<sup>m</sup></i></label
+            >
+          </td>
+          <td align="left" class="Interpretation">
+            Each of the m distinct object may be distributed into any of the n
+            distinct containers.
+          </td>
+        </tr>
+        <!--line2-->
+        <tr>
+          <td>yes</td>
+          <td>yes</td>
+          <td>no</td>
+          <td>n!S(m,n) //onto(m,n)</td>
+          <td align="left" class="Interpretation">
+            Each of the m distinct object may distributed onto any of the n
+            distinct containers with no containers empty.
+          </td>
+        </tr>
+        <!--line3-->
+        <tr>
+          <td>yes</td>
+          <td>no</td>
+          <td>yes</td>
+          <td>S(m,1)+S(m,2)+...+S(m,n)</td>
+          <td align="left" class="Interpretation">
+            m distinct object onto 1,2,...,n identical containers, leaving no
+            containers empty S(m,1)+S(m,2)+...+S(m,n).
+          </td>
+        </tr>
+        <!--line4-->
+        <tr>
+          <td>yes</td>
+          <td>no</td>
+          <td>no</td>
+          <td>S(m,n)</td>
+          <td align="left" class="Interpretation">
+            m distinct object onto n identical containers, leaving no containers
+            empty.
+          </td>
+        </tr>
+        <!--line5-->
+        <tr>
+          <td>no</td>
+          <td>yes</td>
+          <td>yes</td>
+          <td>
+            <img
+              src="./images/ordering.png"
+              style="max-height: 100%; max-width: 100%"
+              width="90"
+              height="50"
+              border="0"
+            />
+          </td>
+          <td align="left" class="Interpretation">
+            Ordering food from the view of kitchen(m kids (identical), n
+            foods(distinct)); m identical pennies into n distinct container;
+            nonnegative integer solutions for an equation.
+          </td>
+        </tr>
+        <!--line6-->
+        <tr>
+          <td>no</td>
+          <td>yes</td>
+          <td>no</td>
+          <td>
+            <img
+              src="./images/deliver.png"
+              style="max-height: 100%; max-width: 100%"
+              width="208"
+              height="40"
+              border="0"
+            />
+          </td>
+          <td align="left" class="Interpretation">
+            Deliver one object to each of the n distinct containers first, then
+            distribute m-n object to the n containers
+          </td>
+        </tr>
+        <!--line7-->
+        <tr>
+          <td>no</td>
+          <td>no</td>
+          <td>yes</td>
+          <td>
+            <img
+              src="./images/parition.png"
+              style="max-height: 100%; max-width: 100%"
+              width="256"
+              height="40"
+              border="0"
+            />
+          </td>
+          <td align="left" class="Interpretation">
+            Partition integer m into at most n summands (with some 0 summands,
+            corresponding to empty containers).
+          </td>
+        </tr>
+        <!--line8-->
+        <tr>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>P(m,n)</td>
+          <td align="left" class="Interpretation">
+            Partiton integer m into exactly n summands(with no container empty).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="./app.js"></script>
+  </body>
+</html>
