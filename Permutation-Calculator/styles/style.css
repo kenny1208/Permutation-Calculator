@@ -1,0 +1,41 @@
+body {
+  font-family: Times;
+}
+body table {
+  text-align: center;
+  border-collapse: collapse;
+}
+body th,
+body td {
+  padding: 5px;
+  border: 1px solid #dddddd;
+}
+body input[type=number] {
+  width: 60px;
+}
+body table.head {
+  background-color: #b2c1dd;
+  text-align: left;
+}
+body table.head tr td.blue {
+  font-size: -1;
+  color: #4477cc;
+}
+body table.one tr.top {
+  background-color: darkseagreen;
+}
+body table.two tr.return {
+  background-color: rgb(234, 203, 163);
+}
+body table.three tr.third {
+  background-color: rgb(251, 202, 209);
+}
+body table.four tr.forth {
+  background-color: blanchedalmond;
+}
+body table.five tr.third {
+  background-color: rgb(251, 202, 209);
+}
+body table.five th.Interpretation {
+  width: 400px;
+}/*# sourceMappingURL=style.css.map */

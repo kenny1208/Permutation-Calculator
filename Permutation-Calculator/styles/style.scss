@@ -1,0 +1,62 @@
+body {
+  font-family: Times;
+
+  table {
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    border: 1px solid #dddddd;
+  }
+  input[type="number"] {
+    width: 60px;
+  }
+
+  table.head {
+    background-color: #b2c1dd;
+    text-align: left;
+    tr {
+      td.blue {
+        font-size: -1;
+        color: #4477cc;
+      }
+    }
+  }
+
+  table.one {
+    tr.top {
+      background-color: darkseagreen;
+    }
+  }
+
+  table.two {
+    tr.return {
+      background-color: rgb(234, 203, 163);
+    }
+  }
+
+  table.three {
+    tr.third {
+      background-color: rgb(251, 202, 209);
+    }
+  }
+
+  table.four {
+    tr.forth {
+      background-color: blanchedalmond;
+    }
+  }
+
+  table.five {
+    tr.third {
+      background-color: rgb(251, 202, 209);
+    }
+
+    th.Interpretation {
+      width: 400px;
+    }
+  }
+}
